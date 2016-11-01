@@ -13,8 +13,8 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			$sourceType = $event['source']['type'];
-			$userId = $event['source'][$sourceType.'Id'];
+			//$sourceType = $event['source']['type'];
+			//$userId = $event['source'][$sourceType.'Id'];
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
 			if ($text == 'HELP') {
 				$msg = '1 : 1234';
 			} else if ($text == 'REGISTER') {
-				$msg = $userId;
+				$msg = print_r($event['source'],true);//$userId;
 			} else {
 				$msg = $text;	
 			}
