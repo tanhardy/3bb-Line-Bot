@@ -7,6 +7,7 @@ $access_token = 'bjMobsS6ndui8SI7L3yfrJTH/J70rI8N/UdD2xX6vKOJQgbooymVfPIiDMOer8H
 $file = 'log.txt';
 //$content = file_get_contents('php://input');
 $content = file_get_contents($file);
+$content .="Test";
 file_put_contents($file, $content);
 // Parse JSON
 $events = json_decode($content, true);
