@@ -19,10 +19,17 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
+			if ($text == 'HELP') {
+				$msg = '1 : 1234';
+			} else if ($text == 'REGISTER') {
+				$msg = $userId;
+			} else {
+				$msg = $text;	
+			}
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $userId,	//$text
+				'text' => $msg,	//$text
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
