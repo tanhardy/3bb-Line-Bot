@@ -4,7 +4,10 @@ $proxyauth = 'qostttbb@gmail.com:noqnoq123';
 $access_token = 'bjMobsS6ndui8SI7L3yfrJTH/J70rI8N/UdD2xX6vKOJQgbooymVfPIiDMOer8HbfO4rhEtXypseVhC9nY4HoRIUnZQ3j0CGVFwLc8Pq/a4lddesAE/PjK06ihIXeq+rw/gWf+5jD/Lf8ToVJPvNuwdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
-$content = file_get_contents('php://input');
+$file = 'log.txt';
+//$content = file_get_contents('php://input');
+$content = file_get_contents($file);
+file_put_contents($file, $content);
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
